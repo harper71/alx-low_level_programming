@@ -13,16 +13,16 @@ int main(int argc, char *argv[])
 
 	int result = 1;
 
+	if (argc > 3 || argc <= 1)
+	{
+		printf("Error\n");
+		return (1);
+	}
 	for (i = 1; i < argc; i++)
 	{
 		int x = atoi(argv[i]);
 
 		result = result * x;
-	}
-	if (argc > 3 || argc <= 1)
-	{
-		printf("Error\n");
-		return (1);
 	}
 	printf("%d\n", result);
 	return (0);
