@@ -13,11 +13,13 @@ char *_strdup(char *str)
 
 	int x = 0;
 
+	char *val5;
+
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	char *val5 = (char *)malloc((l + 1) * sizeof(char));
+	val5 = (char *)malloc((l + 1) * sizeof(char));
 
 	while (str[l] != '\0')
 	{
@@ -32,4 +34,5 @@ char *_strdup(char *str)
 		val5[l] = '\0';
 	}
 	return (val5);
+	free(val5);
 }
