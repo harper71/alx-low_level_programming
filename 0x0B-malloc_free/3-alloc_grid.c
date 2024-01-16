@@ -10,7 +10,7 @@ int **alloc_grid(int width, int height)
 {
 	int i;
 
-	int *matrix = (int *)malloc((width * height) * sizeof(int ));
+	int *matrix = (int *)malloc((width * height) * sizeof(int));
 
 	int **grid = (int **)malloc(height * sizeof(int *));
 
@@ -29,4 +29,5 @@ int **alloc_grid(int width, int height)
 	}
 
 	return (grid);
+	free(grid);
 }
