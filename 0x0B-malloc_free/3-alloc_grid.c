@@ -23,11 +23,13 @@ int **alloc_grid(int width, int height)
 		free(matrix);
 		return (NULL);
 	}
-	for (i = 0; i < height; i++)
+	if (grid != NULL)
 	{
-		grid[i] = &matrix[i * width];
+		for (i = 0; i < height; i++)
+		{
+			grid[i] = &matrix[i * width];
+			free(grid[i]);
+		}
 	}
-
 	return (grid);
-	free(grid);
 }
