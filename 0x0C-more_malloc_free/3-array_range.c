@@ -8,7 +8,7 @@
  */
 int *array_range(int min, int max)
 {
-	int *arr1 = (int *)malloc((min - max + 1) * sizeof(int));
+	int *arr1 = malloc((min - max + 1) * sizeof(int));
 	int i;
 
 	if (min > max)
@@ -21,7 +21,7 @@ int *array_range(int min, int max)
 	}
 	for (i = 0; i < max; i++)
 	{
-		arr1[i] = min + 1;
+		arr1[i] = min++;
 	}
 	return (arr1);
 	free(arr1);
