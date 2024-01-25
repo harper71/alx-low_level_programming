@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
- * print_number - print the listed numbers
+ * print_numbers - print the listed numbers
  * @separator: used to seperate two numbers
  * @n: the total amount of number that is printed
  * @...: the numbers to be printed
@@ -13,6 +13,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list args;
 
 	va_start(args, n);
+	if (n == 0)
+	{
+		va_end(args);
+		return;
+	}
 	if (separator == NULL)
 	{
 		va_end(args);
