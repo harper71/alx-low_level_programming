@@ -2,11 +2,13 @@
 /**
  * print_list - used to print the values in alinked list
  * @h: point to the stucture type list_t
- * Return: nothing
+ * Return: count
  */
 size_t print_list(const list_t *h)
 {
 	const list_t *ptr = NULL;
+
+	size_t count = 0;
 
 	if (h == NULL)
 	{
@@ -23,6 +25,8 @@ size_t print_list(const list_t *h)
 			printf("[0] (nil)\n");
 		}
 		ptr = ptr->next;
+
+		count++;
 	}
-	return (0);
+	return (count);
 }
