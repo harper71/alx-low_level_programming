@@ -7,9 +7,18 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
+	unsigned int len = 0;
+
 	list_t *temp;
 
 	temp = (list_t *)malloc(sizeof(list_t));
+
+	while (str[len])
+	{
+		len++;
+	}
+
+	temp->len = len;
 
 	if (temp == NULL)
 	{
