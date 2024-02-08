@@ -11,18 +11,21 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 	{
-		putchar('0');
+		_putchar('0');
 		return;
 	}
 	while (mask > 0)
 	{
 		if ((n & mask) != 0)
 		{
-			putchar('1');
+			_putchar('1');
+
 			found_one = 1;
 		}
 		else if (found_one)
-			putchar('0');
+		{
+			_putchar('0');
+		}
 
 		mask >>= 1;
 	}
