@@ -1,5 +1,4 @@
 #include "main.h"
-#include <fcntl.h>
 /**
  * read_textfile - reads and prints to standard output
  * @filename: used to get the file name
