@@ -11,7 +11,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	unsigned int count = 0;
 
-	if ((*h) == NULL)
+	if (h == NULL)
 	{
 		return (NULL);
 	}
@@ -43,28 +43,27 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		}
 		return (addPos);
 	}
-	while (store1 != NULL && idx != 1)
+	while (store1 != NULL && count != idx)
 	{
 		store2 = store1;
 
 		store1 = store1->next;
 
-		idx--;
-	}
-	if (idx > count)
-	{
 		count++;
+	}
+	if (count != idx)
+	{
 		return (NULL);
 	}
-	store2 = store1->next;
+	store2->next = addPos;
 
-	store1->next = addPos;
+	addPos->prev = store2;
 
-	store2->prev = addPos;
-
-	addPos->next = store2;
-
-	addPos->prev = store1;
+	addPos->next = store1;
+	if (store1 != NULL)
+	{
+		store1->prev = addPos;
+	}
 
 	return (*h);
 }
