@@ -4,6 +4,7 @@
  * @h: points to the list
  * @idx: position to add at
  * @n: element to add
+ * Return: addPos
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -65,5 +66,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		store1->prev = addPos;
 	}
 
-	return (*h);
+	return (addPos);
 }
