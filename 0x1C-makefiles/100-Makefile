@@ -2,15 +2,18 @@ CC = gcc
 SRC = $(wildcard *.c)
 OBJ = $(patsubst %.c,%.o,$(SRC))
 NAME = school
-RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean fclean re
 
-all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+all: m.h $(OBJ)	
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	$(CC) -c -o $@ $< 
+main.o: main.c m.h
+	gcc -c main.c
+
+school.o: school.c m.h
+	gcc -c school.c
 
 clean:
 	$(RM) *~ $(NAME)
