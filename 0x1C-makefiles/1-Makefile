@@ -1,0 +1,11 @@
+CC = gcc
+SRC = $(wildcard *.c)
+
+school: $(SRC)
+	$(CC) $(SRC) -o school
+
+clean:
+	rm -f school
+
+all: school
+
